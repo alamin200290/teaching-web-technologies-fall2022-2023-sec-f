@@ -1,0 +1,12 @@
+<students>
+    <student id="1" cgpa="3.5">
+        <std_id>12122233</std_id>
+        <name> AL AMIN </name>
+        <email> alamin@aiub.edu</email>
+    </student>
+    <student id="2" cgpa="3.7">
+        <std_id>3346</std_id>
+        <name> XYZ </name>
+        <email> xyz@aiub.edu</email>
+    </student>
+</students>
