@@ -1,0 +1,69 @@
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is H1 element</h1>
+    <h2>This is H1 element</h2>
+    <input type="text" name="name" id="name" value="" />
+    <input type="button" name="btn" value="Click" onclick="ajax()" />
+    <input type="button" name="btn" value="Test" onclick="alert('test')" />
+
+    <script>
+        //name = "alamin";
+        //var name = "alamin";
+        let name ="alamin";
+        let student = [1, 'alamin', 3.5];
+        student[0];
+
+        // function sum(a, b){
+        //     return a+b;
+        // }
+
+        // let f1 = function(a, b){
+        //     return a+b;
+        // }
+        // let f2 = (a,b)=>a+b;
+        // console.log("test...");
+        // document.write("test using JS dom");
+        //alert("test");
+        //confirm('test');
+        
+        function test(){
+            document.getElementsByTagName('h1')[0].innerHTML = "TEST";
+        }
+
+        function f1(){
+            let name = document.getElementById('name').value;
+            document.getElementsByTagName('h1')[0].innerHTML = name;
+        }
+
+        function ajax(){
+            let name = document.getElementById('name').value;
+            let xhttp = new XMLHttpRequest();
+            // xhttp.open('GET', 'nameCheck.php?name='+name, true);
+            // xhttp.send();
+            // xhttp.onreadystatechange = function(){
+                
+            //     if(this.readyState == 4 && this.status == 200){
+            //         //alert(this.responseText);
+            //         document.getElementsByTagName('h1')[0].innerHTML = this.responseText;
+            //     }
+                
+            // }
+
+            xhttp.open('POST', 'nameCheck.php', true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send('name='+name);
+            xhttp.onreadystatechange = function(){
+                
+                if(this.readyState == 4 && this.status == 200){
+                    //alert(this.responseText);
+                    document.getElementsByTagName('h1')[0].innerHTML = this.responseText;
+                }
+                
+            }
+        }
+    </script>
+</body>
+</html>
